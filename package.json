@@ -38,5 +38,13 @@
     "semi": true,
     "singleQuote": true,
     "tabWidth": 4
-  }
+  },
+    "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
