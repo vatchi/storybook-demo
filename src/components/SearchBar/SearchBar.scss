@@ -1,0 +1,31 @@
+
+.search-bar {
+$search-bar-height: 40px;
+$primary-color: #645e5e;
+
+    &__label {
+        display: block;
+        color: $primary-color;
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        height: $search-bar-height;
+        padding: 5px 15px;
+    }
+
+    &__submit {
+        height: $search-bar-height;
+        background-color: white;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.cta-button {
+    padding: 10px;
+    border-radius: 10px;
+
+    &::after {
+        content: '\21E2';
+    }
+
+    &--small {
+        font-size: 1rem;
+    }
+
+    &--medium {
+        font-size: 1.5rem;
+    }
+
+    &--large {
+        font-size: 2rem;
+    }
+}
