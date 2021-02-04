@@ -18,4 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+<<<<<<< HEAD
         run: npx semantic-release
+=======
+        run: npx semantic-release
+>>>>>>> d1478a8afcf482b3276709868f35e42b6038c1f8
