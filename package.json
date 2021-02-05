@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "repository": "https://github.com/vatchi/storybook-demo",
   "description": "A project showcasing how to work with Storybook.",
+  "files": ["dist/*", "src/*"],
+  "main": "./dist/storybook-demo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint-js": "eslint . --ext .js,.vue --color -f table"
@@ -34,14 +36,16 @@
     "style-loader": "^2.0.0",
     "vue-loader": "^15.9.6",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0"
   },
   "prettier": {
     "semi": true,
     "singleQuote": true,
     "tabWidth": 4
   },
-    "plugins": [
+  "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
@@ -49,7 +53,10 @@
     "@semantic-release/npm",
     "@semantic-release/git"
   ],
-    "release": {
-    "branches": ["main", "master"]
+  "release": {
+    "branches": [
+      "main",
+      "master"
+    ]
   }
 }
