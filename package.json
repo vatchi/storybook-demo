@@ -2,7 +2,7 @@
   "name": "storybook-demo",
   "version": "1.0.0",
   "repository": "https://github.com/vatchi/storybook-demo",
-  "description": "A project showcasing how to work with Storybook.",
+  "description": "A project showcasing how to work with Storybook",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
