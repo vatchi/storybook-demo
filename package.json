@@ -1,62 +1,78 @@
 {
-  "name": "storybook-demo",
-  "version": "1.0.0",
-  "repository": "https://github.com/vatchi/storybook-demo",
-  "description": "A project showcasing how to work with Storybook.",
-  "files": ["dist/*", "src/*"],
-  "main": "./dist/storybook-demo.js",
-  "scripts": {
-    "build": "webpack --mode=development",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "lint-js": "eslint . --ext .js,.vue --color -f table"
+    "name": "storybook-demo",
+    "version": "1.0.0",
+    "repository": "https://github.com/vatchi/storybook-demo",
+    "description": "A project showcasing how to work with Storybook.",
+    "files": [
+        "dist/*",
+        "src/*"
+    ],
+    "main": "dist/storybook-demo.umd.js",
+    "module": "dist/storybook-demo.esm.js",
+    "unpkg": "dist/storybook-demo.min.js",
+      "browser": {
+    "./sfc": "src/**.vue"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue": "^2.6.12"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@storybook/addon-a11y": "^6.1.15",
-    "@storybook/addon-actions": "^6.1.15",
-    "@storybook/addon-essentials": "^6.1.15",
-    "@storybook/addon-links": "^6.1.15",
-    "@storybook/vue": "^6.1.15",
-    "babel-loader": "^8.2.2",
-    "babel-preset-vue": "^2.0.2",
-    "css-loader": "^5.0.1",
-    "eslint": "^7.18.0",
-    "eslint-plugin-vue": "^7.5.0",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.1",
-    "semantic-release": "^17.3.7",
-    "style-loader": "^2.0.0",
-    "vue-loader": "^15.9.6",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.12",
-    "webpack": "^5.20.2",
-    "webpack-cli": "^4.5.0"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 4
-  },
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/github",
-    "@semantic-release/npm",
-    "@semantic-release/git"
-  ],
-  "release": {
-    "branches": [
-      "main",
-      "master"
-    ]
-  }
+    "scripts": {
+        "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+        "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/storybook-demo.umd.js",
+        "build:es": "rollup --config build/rollup.config.js --format es --file dist/storybook-demo.esm.js",
+        "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/storybook-demo.min.js",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "lint-js": "eslint . --ext .js,.vue --color -f table"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "vue": "^2.6.12"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@rollup/plugin-buble": "^0.21.3",
+        "@rollup/plugin-commonjs": "^17.1.0",
+        "@storybook/addon-a11y": "^6.1.15",
+        "@storybook/addon-actions": "^6.1.15",
+        "@storybook/addon-essentials": "^6.1.15",
+        "@storybook/addon-links": "^6.1.15",
+        "@storybook/vue": "^6.1.15",
+        "babel-loader": "^8.2.2",
+        "babel-preset-vue": "^2.0.2",
+        "css-loader": "^5.0.1",
+        "eslint": "^7.18.0",
+        "eslint-plugin-vue": "^7.5.0",
+        "node-sass": "^5.0.0",
+        "postcss": "^8.2.5",
+        "rollup": "^2.38.5",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-vue": "^6.0.0",
+        "sass": "^1.32.6",
+        "sass-loader": "^10.1.1",
+        "semantic-release": "^17.3.7",
+        "style-loader": "^2.0.0",
+        "vue-loader": "^15.9.6",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "prettier": {
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4
+    },
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/changelog",
+        "@semantic-release/github",
+        "@semantic-release/npm",
+        "@semantic-release/git"
+    ],
+    "release": {
+        "branches": [
+            "main",
+            "master"
+        ]
+    }
 }
