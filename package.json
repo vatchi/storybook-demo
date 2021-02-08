@@ -9,7 +9,7 @@
     ],
     "main": "dist/storybook-demo.common.js",
     "scripts": {
-        "build": "vue-cli-service build --target lib --name storyboook-demo ./src/main.js",
+        "build": "vue-cli-service build --target lib --name storybook-demo ./src/main.js",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "lint-js": "eslint . --ext .js,.vue --color -f table"
