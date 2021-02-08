@@ -14,4 +14,4 @@ import SearchBar from './components/SearchBar/SearchBar.vue';
 
 // export default Components;
 
-export default { CtaButton, SearchBar };
+export { CtaButton, SearchBar };
